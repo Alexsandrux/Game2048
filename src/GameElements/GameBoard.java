@@ -18,12 +18,10 @@ public class GameBoard {
             }
         }
 
-        
 
-        // TODO: implement default number generation
-        grid[0][2].setTileValue(2);
-        grid[2][3].setTileValue(2);
-        grid[0][3].setTileValue(2);
+        TileNumberGenerator tileNumberGenerator = new TileNumberGenerator(this);
+        tileNumberGenerator.generateNewTile();
+        tileNumberGenerator.generateNewTile();
     }
 
     public int getNoLines() {

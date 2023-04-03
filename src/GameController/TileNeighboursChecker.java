@@ -37,7 +37,25 @@ public class TileNeighboursChecker {
                     // IF AFTER WE ADD THERE ARE STILL ZEROS AFTER THE NEW NUMBER WE MOVE THE NUMBER TO THE TOP
                     // IF WE COULDN'T GET A NEW NUMBER WE CHECK IF THERE IS A ZERO IN BETWEEN
 
+                    if (gameBoard.getGrid()[i][j].getTileValue() != 0)
+                    {
+                        int valueToCheck = gameBoard.getGrid()[i][j].getTileValue();
 
+                        for (int k = (i - 1); k >= 0; k--) {
+
+                            if(gameBoard.getGrid()[k][j].getTileValue() == valueToCheck)
+                            {
+                                gameBoard.setGridTileValue(valueToCheck * 2, k, j);
+                                gameBoard.setGridTileValue(0, i, j);
+                                break;
+                            }
+                            else if(((k + 1) != i) && gameBoard.getGrid()[k + 1][j].getTileValue() == 0){
+                                gameBoard.setGridTileValue(valueToCheck, k + 1, j);
+                                gameBoard.setGridTileValue(0, i, j);
+                                break;
+                            }
+                        }
+                    }
                 }
             }
 

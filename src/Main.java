@@ -20,6 +20,8 @@ public class Main {
 
         TileNumberGenerator tileNumberGenerator = new TileNumberGenerator(gameBoard);
 
+
+        // test
         while (true)
         {
             try {
@@ -28,6 +30,8 @@ public class Main {
 
                 System.out.println();
                 upOption.move(gameBoard);
+
+                // TODO: GENERATE TILE WHEN WE SUCCESSFULLY COMBINE
                 tileNumberGenerator.generateNewTile();
                 ScreenDisplayer.displayBoard(gameBoard);
 

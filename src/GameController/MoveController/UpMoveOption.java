@@ -9,6 +9,7 @@ public class UpMoveOption implements MoveController{
     public void move(GameBoard gameBoard) {
         TileNeighboursChecker checker = new TileNeighboursChecker(gameBoard);
 
+
         checker.checkMove(MoveOptions.UP);
     }
 }
